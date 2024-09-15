@@ -7,6 +7,6 @@
 		<PackageId>Genesis.Models</PackageId>
 		<Authors>Mohmad Sufiyan</Authors>
 		<Description>Package for Generic Views and Models</Description>
-		<RepositoryUrl>https://github.com/Dev-Sufiyan/Genesis.Package.Template</RepositoryUrl>
+		<RepositoryUrl>https://github.com/Dev-Sufiyan/Genesis.Models</RepositoryUrl>
 	</PropertyGroup>
 </Project>
