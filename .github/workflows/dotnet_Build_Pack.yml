@@ -25,10 +25,10 @@ jobs:
       run: dotnet build --configuration Debug
     
     - name: Test
-      run: dotnet test ./Genesis.Package.Template.Test/Genesis.Package.Template.Test.csproj --no-build --verbosity normal
+      run: dotnet test ./Genesis.Models.Test/Genesis.Models.Test.csproj --no-build --verbosity normal
 
     - name: Build for Pack
       run: dotnet build --configuration Release --no-restore
       
     - name: NuGet Package
-      run: dotnet pack Genesis.Package.Template/Genesis.Package.Template.csproj --configuration Release /p:PackageVersion=0.0.0-PRCheck --output ./artifacts
+      run: dotnet pack Genesis.Models/Genesis.Models.csproj --configuration Release /p:PackageVersion=0.0.0-PRCheck --output ./artifacts
