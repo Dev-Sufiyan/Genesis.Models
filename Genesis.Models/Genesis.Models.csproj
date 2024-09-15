@@ -4,9 +4,9 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageId>Genesis.Package.Template</PackageId>
+		<PackageId>Genesis.Models</PackageId>
 		<Authors>Mohmad Sufiyan</Authors>
-		<Description>Base template to create NuGet packages</Description>
+		<Description>Package for Generic Views and Models</Description>
 		<RepositoryUrl>https://github.com/Dev-Sufiyan/Genesis.Package.Template</RepositoryUrl>
 	</PropertyGroup>
 </Project>
