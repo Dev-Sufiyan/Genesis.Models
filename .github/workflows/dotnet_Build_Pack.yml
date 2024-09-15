@@ -1,0 +1,34 @@
+name: Build & Pack Check
+
+on:
+  push:
+    branches: [ main, V*, develop ]
+  pull_request:
+    branches: '*'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    - name: Build for Test
+      run: dotnet build --configuration Debug
+    
+    - name: Test
+      run: dotnet test ./Genesis.Package.Template.Test/Genesis.Package.Template.Test.csproj --no-build --verbosity normal
+
+    - name: Build for Pack
+      run: dotnet build --configuration Release --no-restore
+      
+    - name: NuGet Package
+      run: dotnet pack Genesis.Package.Template/Genesis.Package.Template.csproj --configuration Release /p:PackageVersion=0.0.0-PRCheck --output ./artifacts
