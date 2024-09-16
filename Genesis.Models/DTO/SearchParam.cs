@@ -4,16 +4,10 @@ namespace Genesis.Models.DTO
 {
     public class SearchParam
     {
-        public string Field { get; set; }
-        public string Value { get; set; }
+        public string Field { get; set; } = string.Empty;
+        public string Value { get; set; } = string.Empty;
         public ComparisonOperator Comparator { get; set; }
 
-        public SearchParam(string field, string value, ComparisonOperator comparator)
-        {
-            Field = field;
-            Value = value;
-            Comparator = comparator;
-        }
         public bool Validate(out string validationMessage)
         {
             validationMessage = string.Empty;
